@@ -105,12 +105,12 @@ void Table::getValueFromCell(MyString& str) const
 		str = rows[ind1 - 1][ind2 - 1]->getString(); // tuka se bugvashe,shtoto vuv vectora imashe proverka s assertIndex \
 																koqto ni hvurlqshe greshka samo ako index > size, a nie iskame da hvurlq i ako index == size, shtoto togava index-a \
 																pak e nevaliden
-		if (str[0] == '=') //това правилно ли е, щото все едно проверявам дали е формула, пък си имам valueFactory
+		if (str[0] == '=') //ГІГ®ГўГ  ГЇГ°Г ГўГЁГ«Г­Г® Г«ГЁ ГҐ, Г№Г®ГІГ® ГўГ±ГҐ ГҐГ¤Г­Г® ГЇГ°Г®ГўГҐГ°ГїГўГ Г¬ Г¤Г Г«ГЁ ГҐ ГґГ®Г°Г¬ГіГ«Г , ГЇГєГЄ Г±ГЁ ГЁГ¬Г Г¬ valueFactory
 		{
 			getValueFromCell(str);
 		}
-		else if((str[0] < '0' || str[0] > '9')) //тук проверявам дали стойността ми е число, ако не е - правя стринга да е 0 -> как мога
-		{										//да го направя по-добре
+		else if((str[0] < '0' || str[0] > '9')) //ГІГіГЄ ГЇГ°Г®ГўГҐГ°ГїГўГ Г¬ Г¤Г Г«ГЁ Г±ГІГ®Г©Г­Г®Г±ГІГІГ  Г¬ГЁ ГҐ Г·ГЁГ±Г«Г®, Г ГЄГ® Г­ГҐ ГҐ - ГЇГ°Г ГўГї Г±ГІГ°ГЁГ­ГЈГ  Г¤Г  ГҐ 0 -> ГЄГ ГЄ Г¬Г®ГЈГ 
+		{										//Г¤Г  ГЈГ® Г­Г ГЇГ°Г ГўГї ГЇГ®-Г¤Г®ГЎГ°ГҐ
 			if (str[0] == '-' || str[0] == '+')
 			{
 				if (str[1] < '0' || str[1] > '9')
