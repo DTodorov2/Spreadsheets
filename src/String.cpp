@@ -1,6 +1,6 @@
-#include "String.h"
-#include "Value.h"
-#include "Helper.h"
+#include "../include/String.h"
+#include "../include/Value.h"
+#include "../include/Helper.h"
 
 String::String() : Value() {};
 

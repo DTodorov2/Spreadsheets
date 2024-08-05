@@ -1,5 +1,5 @@
-#include "Formula.h"
-#include "Value.h"
+#include "../include/Formula.h"
+#include "../include/Value.h"
 #include <cmath>
 
 Formula::Formula() : Value() {};

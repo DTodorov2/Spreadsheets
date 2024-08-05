@@ -1,4 +1,4 @@
-#include "MyString.h"
+#include "../include/MyString.h"
 
 MyString::MyString(size_t capacity)
 {

@@ -1,7 +1,7 @@
-#include "Value.h"
+#include "../include/Value.h"
 #include <sstream>
 
-void Value::setValue(const MyString& str/*, Types type*/)
+void Value::setValue(const MyString& str)
 {
 	this->str = str;
 }

@@ -1,6 +1,6 @@
-#include "Helper.h"
+#include "../include/Helper.h"
 #include <sstream>
-#include "Menu.h"
+#include "../include/Menu.h"
 
 //removes slashes before " and the reversed slash
 void Helper::removeUselessSlashes(MyString& str)

@@ -1,9 +1,9 @@
-#include "Table.h"
+#include "../include/Table.h"
 #include <fstream>
 #include <sstream>
 #include <windows.h>
-#include "GlobalConstants.h"
-#include "Helper.h"
+#include "../include/GlobalConstants.h"
+#include "../include/Helper.h"
 #include <cstdlib>
 
 //makes array with max width from each column in a row

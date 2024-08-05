@@ -1,4 +1,4 @@
-#include "Menu.h"
+#include "../include/Menu.h"
 //Using MSVC compiler
 
 void Menu::validateOption(MyString& option)
