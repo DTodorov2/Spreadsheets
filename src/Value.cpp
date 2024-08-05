@@ -1,4 +1,4 @@
-#include "Value.h"
+#include "../include/Value.h"
 #include <sstream>
 
 void Value::setValue(const MyString& str/*, Types type*/)
