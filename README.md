@@ -20,9 +20,9 @@ _Example of a __valid__ formula_: "__= 3 ^ 2 + ( -2 ) * R1C2__"
 If a formula contains division by zero (__= 2 / 0__) or exponentiation of a number to a negative power, the result will be "__ERROR__".
 Numbers can be written with or without leading signs (e.g., +23).
 ### File Operations:
-___Close file___: Closes the opened file and asks the user if they want to continue. If no, the program exits; otherwise, a new filename is requested.
-___Save file___: Saves changes to the currently opened file.
-___Save file as___: Saves the data to a new file, requiring the user to provide a filename with a .txt extension.
+___Close file___: Closes the opened file and asks the user if they want to continue. If no, the program exits; otherwise, a new filename is requested.<br>
+___Save file___: Saves changes to the currently opened file.<br>
+___Save file as___: Saves the data to a new file, requiring the user to provide a filename with a .txt extension.<br>
 ___Edit cell___: Allows the user to modify a specific cell by entering the column and row number, followed by the new value. The program provides different messages based on the input:<br>
 "_Invalid index!_" → The specified cell does not exist.<br>
 " _is invalid data type!_" → The entered value is not a valid data type; an explanation is displayed, followed by "_Cell edit failed!_".<br>
