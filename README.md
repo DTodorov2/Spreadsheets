@@ -1,31 +1,30 @@
 # Spreadsheets
 
-Проектът “__Spreadsheets__” работи с файлове, като започва работа с файла след първоначалното му отваряне. Няма как да се работи с програмата преди самото отваряне на файл. Ако даденият файл не съществува, се изкарва съобщение “_Such file does not exist!_” и се пита за друго име на файл. След отварянето на файл има няколко опции за действия с него (_Принтиране, затваряне, запазване, запазване като нов, редактиране на клетка_). Няма как да се работи с друг файл, докато имаме вече един отворен. За да бъде някоя стойност в клетка валиден тип данна, то тя трябва да бъде едно от следните неща – число (цяло или дробно), формула или string, като за да бъде даден string валиден, той трябва да започва и да  завършва с кавички. Ако някъде в стринга има “ или \, то трябва преди тях да се сложи \, за да могат да бъдат включени в string-а и той да бъде валиден.<br>
-_Пример за __валиден__ стринг_: “eX\\amp\”le”, като този string ще се интерпретира като “eX\amp”le”.<br>
-_Пример за __невалиден__ стринг_: “eX\amp”le”.<br>
+The "__Spreadsheets__" project works with files, requiring a file to be opened before any operations can be performed. If the specified file does not exist, the message "__Such file does not exist!__" is displayed, and the user is prompted to enter another filename. Once a file is opened, several actions can be performed, including __printing, closing, saving, saving as a new file, and editing__ a cell. The program does not allow working with multiple files simultaneously.
 
-За да бъде дадена формула коректна, то тя трябва да бъде в следния вид: value operation value…, като между всяка стойност и знак (операция или скоба), трябва да има разстояние, като единствено числата, който имат знак отпред не трябва да съдържат спейс по между им (между знака и самото число).<br>
-_Пример за __валидна__ формула_: = ( R1C2 + R2C2 ) * 3 ^ 2 – ( -2 ).<br>
-_Пример за __невалидна__ формула_: = (-2) * 3^3 + (R1C2+R2C2).<br>
+For a cell value to be valid, it must be one of the following types: a number (integer or floating point), a formula, or a string. A valid string must begin and end with quotation marks. If a string contains " or ,, a \ must be placed before them to be included in the string.<br>
 
-За да бъде едно число валидно, то ако е дробно – трябва да бъде изписано с точка и не трябва да има разстояние между числото и знака пред него.
+_Example of a __valid__ string_: "eX\amp\"le" → Interpreted as "eX\amp"le"<br>
+_Example of an __invalid__ string_: "eX\amp"le"<br>
+### Formulas
+A valid formula must follow the format: value operation value…, where there must be spaces between each value and operator (except for numbers with a leading sign).<br>
 
-Функцията “___принтиране___” изкарва съдържанието на файла на конзолата, като броя на клетките на всеки ред се определя от максималния брой клетки на всички редове. Ако в дадена клетка имаме невалиден тип данна, се проверява за изпусната запетая от потребителя.
-_Пример_: При въведена стойност 123”example”, ще се изведе съобщение, че има изпусната запетая на съотвения ред и колона, на която се намира данната и след кой знак е изпусната запетаята. Това действие бива последвано от въпроса към потребителя „_Do you want to continue? – y/n_“, като при положителен отговор от страна на потребителя на мястото на невалидната данна се записва __Invalid__, а при отрицателен – програмата бива спирана.
- 
-Ако в някоя клетка има формула, то при извеждането на таблицата на екрана се изкарва самата стойност на формулата в клетката. Създава се вектор от всички числа, които участват във формулата и вектор от всички операции, които участват във формулата. След използването на две числа, те се премахват от вектора и самата операция, която използваме, също се премахва от вектора с операции. Формулата трябва да бъде написана в следния вид “__= 3 ^ 2 + ( -2 ) * R1C2__”, тоест трябва да има space след всеки символ, иначе ще бъде сметната за невалиден тип данна. 
-•	Ако в някоя клетка има формула от вида “__= 2 / 0__”, то в таблицата ще бъде записано “__ERROR__”, тъй като деленето на нула е неправилно. Същата реакция предизвиква и повдигането на число на негативна степен.
-•	Числата могат да се записват както в нормален вид, така и със знаци отпред - примерно “+23”. 
+_Example of a __valid__ formula_: = ( R1C2 + R2C2 ) * 3 ^ 2 – ( -2 )<br>
+_Example of an __invalid__ formula_: = (-2) * 3^3 + (R1C2+R2C2)<br>
+Numbers must use a dot (.) as the decimal separator and must not contain spaces between the number and its sign.
 
-Функцията “___Close file___” затваря вече отвореният файл, като след това потребителят бива питан дали иска да продължи работата си с програмата, ако не - то програмата спира, иначе се изисква ново име на файл, с който следва да се работи. 
-
-Функцията “___Save file___” запазва информацията в същия файл, който е вече отворен. 
-
-Функцията “___Save file as___” запазва информацията в нов файл. Изисква се име на файл, в който да бъде запазена таблицата, като разширението на файла трябва да бъде задължително “.txt”. 
-
-Функцията “___Edit cell___” променя съдържанието на дадена клетка, като за да се избере точната клетка, то потребителят трябва да въведе номер на колона и след това номер на ред, след което се изисква информацията, с която да бъде заместена досегашната такава. След което се извежда съобщение:<br>
-•	Ако съобщението е от вида “_Invalid index!_”, то това значи, че не съществува клетка с посочените координати.<br>
-•	Ако съобщението е “ _is invalid data type!_”, то това означава, че потребителят не е въвел валиден тип данна, след което се извежда описание на валидните типове данни и "_Cell edit failed!_“.<br>
-•	Ако съобщението е “_Cell edited successfully!_”, то потребителят е направил всичко правилно.<br>
-
-Функцията “___Exit program___” спира програмата, като се грижи за затварянето на файла, ако той не е бил затворен досега. 
+___Printing function___: Displays the file's contents in the console. The number of columns in each row is determined by the maximum number of cells in all rows. If a cell contains invalid data, the program checks for a missing comma and notifies the user. <br>
+_Example_: If the value 123”example” is entered, the program will indicate a missing comma and prompt the user with "_Do you want to continue? – y/n_". If yes, "__Invalid__" is recorded in the cell; if no, the program terminates.<br>
+If a cell contains a formula, its evaluated result is displayed. The program creates a vector of all numbers and another vector of all operations in the formula. Once two numbers are used, they and their corresponding operator are removed from the vectors. Formulas must be written with spaces between symbols, otherwise, they will be considered invalid.
+_Example of a __valid__ formula_: "__= 3 ^ 2 + ( -2 ) * R1C2__"
+If a formula contains division by zero (__= 2 / 0__) or exponentiation of a number to a negative power, the result will be "__ERROR__".
+Numbers can be written with or without leading signs (e.g., +23).
+### File Operations:
+___Close file___: Closes the opened file and asks the user if they want to continue. If no, the program exits; otherwise, a new filename is requested.
+___Save file___: Saves changes to the currently opened file.
+___Save file as___: Saves the data to a new file, requiring the user to provide a filename with a .txt extension.
+___Edit cell___: Allows the user to modify a specific cell by entering the column and row number, followed by the new value. The program provides different messages based on the input:<br>
+"_Invalid index!_" → The specified cell does not exist.<br>
+" _is invalid data type!_" → The entered value is not a valid data type; an explanation is displayed, followed by "_Cell edit failed!_".<br>
+"_Cell edited successfully!_" → The cell has been successfully updated.<br>
+___Exit program___: closes the application, ensuring that the opened file is properly closed before termination.
