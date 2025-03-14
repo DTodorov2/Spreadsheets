@@ -103,12 +103,12 @@ void Table::getValueFromCell(MyString& str) const
 	try
 	{
 		str = rows[ind1 - 1][ind2 - 1]->getString(); 
-		if (str[0] == '=') //òîâà ïðàâèëíî ëè å, ùîòî âñå åäíî ïðîâåðÿâàì äàëè å ôîðìóëà, ïúê ñè èìàì valueFactory
+		if (str[0] == '=')
 		{
 			getValueFromCell(str);
 		}
-		else if((str[0] < '0' || str[0] > '9')) //òóê ïðîâåðÿâàì äàëè ñòîéíîñòòà ìè å ÷èñëî, àêî íå å - ïðàâÿ ñòðèíãà äà å 0 -> êàê ìîãà
-		{										//äà ãî íàïðàâÿ ïî-äîáðå
+		else if((str[0] < '0' || str[0] > '9'))
+		{										
 			if (str[0] == '-' || str[0] == '+')
 			{
 				if (str[1] < '0' || str[1] > '9')
