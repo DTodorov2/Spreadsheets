@@ -12,13 +12,13 @@ void Helper::removeUselessSlashes(MyString& str)
 		char secondChar = str[i + 1];
 		if ((firstChar == '\\' && secondChar == '\"') || (firstChar == '\\' && secondChar == '\\'))
 		{
-			for (size_t j = i; j <= strLength; j++) // =, shototo iskame i polsedntie kavichki da premesti
+			for (size_t j = i; j <= strLength; j++)
 			{
 				str[j] = str[j + 1];
 			}
-			str[strLength + 1] = '\0'; // vmesto poslednite kavichki da sloji \0
-			strLength--; // namalqvam s 1, shtoto sme mahnali edna naklonena cherta
-			i--; // shtoto kato sme mahnali edna i sme premestili iskame da produljim da gledame ot sushtoto mqsto, za da ne izpusnem neshto
+			str[strLength + 1] = '\0'; 
+			strLength--; 
+			i--;
 		}
 	}
 	str = str.c_str();
@@ -58,11 +58,9 @@ void Helper::removeSpaces(MyString& str)
 		str[lengthWithoutFrontSpaces - 1] = '\0';
 		--lengthWithoutFrontSpaces;
 	}
-	str = str.c_str(); //tova za kvo mi e? -> za da promenq duljinata na string-a, sled kato mahna space-ovete
+	str = str.c_str(); 
 }
 
-//realno q polzvam, ako v nqkoq kletka referiram kum kletka, v koqto ima formula i vse edno proverqvam dali tazi formula sudurja kletkata, \
-v koqto sum az
 bool Helper::containsTheSameCell(const MyString& currString, const MyString& checkStr)
 {
 	std::stringstream ss(checkStr.c_str());
@@ -91,7 +89,7 @@ bool Helper::isCell(const MyString& str)// not static, because I am using it in 
 			{
 				return false;
 			}
-			if (str[i] == 'C' && i != str.length() - 1) // chrez vtorata proverka izbqgvam C da bude posledna bukva, bez da ima cifri sled neq
+			if (str[i] == 'C' && i != str.length() - 1)
 			{
 				cOccured = true;
 			}
@@ -188,7 +186,7 @@ bool Helper::isValidFormula(const MyString& str)
 {
 	std::stringstream line(str.c_str());
 	char buff[64]{};
-	bool isOperation = false; //tova mi pomaga da razbera dali se reduvat stoinost i operation(t.e predotvratqva sluchaq, v koito move da imam dve stoinosti ili dve operacii edna sled druga)
+	bool isOperation = false; 
 	int counterBrackets = 0;
 	line >> buff;
 	//if the first symbol is not = or str finishes with an operation
@@ -205,7 +203,7 @@ bool Helper::isValidFormula(const MyString& str)
 				break;
 			}
 			line >> buff;
-			if (buff[0] == '(') // s dolnite dve proverki proverqvam, dali ima ) predi (
+			if (buff[0] == '(') 
 			{
 				counterBrackets++;
 			}
