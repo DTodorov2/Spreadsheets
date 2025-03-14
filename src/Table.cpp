@@ -102,9 +102,7 @@ void Table::getValueFromCell(MyString& str) const
 	MyString copyStr(str);
 	try
 	{
-		str = rows[ind1 - 1][ind2 - 1]->getString(); // tuka se bugvashe,shtoto vuv vectora imashe proverka s assertIndex \
-																koqto ni hvurlqshe greshka samo ako index > size, a nie iskame da hvurlq i ako index == size, shtoto togava index-a \
-																pak e nevaliden
+		str = rows[ind1 - 1][ind2 - 1]->getString(); 
 		if (str[0] == '=') //òîâà ïðàâèëíî ëè å, ùîòî âñå åäíî ïðîâåðÿâàì äàëè å ôîðìóëà, ïúê ñè èìàì valueFactory
 		{
 			getValueFromCell(str);
