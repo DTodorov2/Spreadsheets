@@ -8,7 +8,6 @@ void Row::free()
 	{
 		delete values[i];
 	}
-	//delete[] values; -> values ne trqbva da go triq, nali -> shtoto vector-a sam se griji za tova
 }
 
 void Row::copyFrom(const Row& other)
