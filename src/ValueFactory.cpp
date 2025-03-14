@@ -11,7 +11,7 @@ Value* valueFactory(const MyString& str, Types type, char ch)
 	case Types::formula:
 	{
 		Formula* newFormula = new Formula(str);
-		if (ch == 'r') // if ch == r, then we must calculate the formula -> do it, when edit a cell
+		if (ch == 'r') // if ch == r, then we must calculate the formula
 			newFormula->setValue(str);
 		return newFormula;
 	}
