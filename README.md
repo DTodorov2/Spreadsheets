@@ -1,8 +1,13 @@
 # Spreadsheets
 
-The "__Spreadsheets__" project works with files, requiring a file to be opened before any operations can be performed. If the specified file does not exist, the message "__Such file does not exist!__" is displayed, and the user is prompted to enter another filename. Once a file is opened, several actions can be performed, including __printing, closing, saving, saving as a new file, and editing__ a cell. The program does not allow working with multiple files simultaneously.
+The **Spreadsheets** project operates with files, requiring a file to be opened before any operations can be performed. If the specified file does not exist, the message **"Such file does not exist!"** is displayed, and the user is prompted to enter another filename. Once a file is opened, several actions can be performed, including **printing, closing, saving, saving as a new file, and editing** a cell. The program does not allow working with multiple files simultaneously.
 
-For a cell value to be valid, it must be one of the following types: a number (integer or floating point), a formula, or a string. A valid string must begin and end with quotation marks. If a string contains " or ,, a \ must be placed before them to be included in the string.<br>
+### Valid Cell Values
+
+A cell value can be one of the following types:
+- **Number** (integer or floating point)
+- **Formula**
+- **String**: A valid string must begin and end with quotation marks. If the string contains `"` or `,`, a `\` must be used before them.
 
 _Example of a __valid__ string_: "eX\amp\"le" → Interpreted as "eX\amp"le"<br>
 _Example of an __invalid__ string_: "eX\amp"le"<br>
@@ -19,12 +24,17 @@ If a cell contains a formula, its evaluated result is displayed. The program cre
 _Example of a __valid__ formula_: "__= 3 ^ 2 + ( -2 ) * R1C2__"
 If a formula contains division by zero (__= 2 / 0__) or exponentiation of a number to a negative power, the result will be "__ERROR__".
 Numbers can be written with or without leading signs (e.g., +23).
-### File Operations:
-___Close file___: Closes the opened file and asks the user if they want to continue. If no, the program exits; otherwise, a new filename is requested.<br>
-___Save file___: Saves changes to the currently opened file.<br>
-___Save file as___: Saves the data to a new file, requiring the user to provide a filename with a .txt extension.<br>
-___Edit cell___: Allows the user to modify a specific cell by entering the column and row number, followed by the new value. The program provides different messages based on the input:<br>
-"_Invalid index!_" → The specified cell does not exist.<br>
-" _is invalid data type!_" → The entered value is not a valid data type; an explanation is displayed, followed by "_Cell edit failed!_".<br>
-"_Cell edited successfully!_" → The cell has been successfully updated.<br>
-___Exit program___: closes the application, ensuring that the opened file is properly closed before termination.
+
+If a formula contains division by zero (`= 2 / 0`) or exponentiation of a number to a negative power, the result will be **"ERROR"**. Numbers can be written with or without leading signs (e.g., `+23`).
+
+### File Operations
+
+- **Close file**: Closes the opened file and asks the user if they want to continue. If no, the program exits; otherwise, a new filename is requested.
+- **Save file**: Saves changes to the currently opened file.
+- **Save file as**: Saves the data to a new file with the user-provided filename (must have `.txt` extension).
+- **Edit cell**: Allows the user to modify a specific cell by entering the column and row number, followed by the new value. The program provides different messages based on the input:
+  - `"Invalid index!"` → The specified cell does not exist.
+  - `"<value> is invalid data type!"` → The entered value is not a valid data type; an explanation is displayed, followed by `"Cell edit failed!"`.
+  - `"Cell edited successfully!"` → The cell has been successfully updated.
+- **Exit program**: Closes the application, ensuring that the opened file is properly closed before termination.
+
